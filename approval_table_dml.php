@@ -420,7 +420,7 @@ function approval_table_form($selectedId = '', $allowUpdate = true, $allowInsert
 		$combo_approval_status->ListItem = array_trim(explode('||', entitiesToUTF8(convertLegacyOptions($approval_status_data))));
 		$combo_approval_status->ListData = $combo_approval_status->ListItem;
 	} else {
-		$combo_approval_status->ListItem = array_trim(explode('||', entitiesToUTF8(convertLegacyOptions("Approved by CEO;;Not Approved by CEO;;Approved by PD;;Not Approved by PD;;Under Consideration"))));
+		$combo_approval_status->ListItem = array_trim(explode('||', entitiesToUTF8(convertLegacyOptions("Approved by PD;;Not Approved by PD;;Under Consideration;;Approved by CEO;;Not Approved by CEO"))));
 		$combo_approval_status->ListData = $combo_approval_status->ListItem;
 	}
 	$combo_approval_status->SelectName = 'approval_status';
