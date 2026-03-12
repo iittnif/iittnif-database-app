@@ -1,0 +1,15 @@
+<!-- Edit this file to change the layout of each record in the table view -->
+<!-- To disable clicking of a field, remove the <%%SELECT%%> and <%%ENDSELECT%%> formatters around it-->
+
+<!-- If you wish to hide the table view header that contains the column titles, -->
+<!-- add the following to the approval_table_init() hook (in hooks/approval_table.php file) -->
+<!--     $options->ShowTableHeader = 0;     -->
+
+		<td id="approval_table-id-<%%VALUE(id)%%>" class="approval_table-id text-right text-bold"><%%VALUE(id)%%></td>
+		<td id="approval_table-approval_from-<%%VALUE(id)%%>" class="approval_table-approval_from text-bold"><%%VALUE(approval_from)%%></td>
+		<td id="approval_table-type-<%%VALUE(id)%%>" class="approval_table-type text-bold"><%%VALUE(type)%%></td>
+		<td id="approval_table-description-<%%VALUE(id)%%>" class="approval_table-description text-bold"><%%VALUE(description)%%></td>
+		<td id="approval_table-full_est_value-<%%VALUE(id)%%>" class="approval_table-full_est_value text-bold"><%%VALUE(full_est_value)%%></td>
+		<td id="approval_table-approval_status-<%%VALUE(id)%%>" class="approval_table-approval_status text-bold"><%%VALUE(approval_status)%%></td>
+		<td id="approval_table-remarks_for_approval-<%%VALUE(id)%%>" class="approval_table-remarks_for_approval text-bold"><%%VALUE(remarks_for_approval)%%></td>
+		<td id="approval_table-created_by_username-<%%VALUE(id)%%>" class="approval_table-created_by_username text-bold"><%%VALUE(created_by_username)%%></td>

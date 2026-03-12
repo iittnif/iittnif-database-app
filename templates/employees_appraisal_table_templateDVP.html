@@ -1,0 +1,148 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Employee Details -->
+		<div class="form-group employees_appraisal_table-employee_designation_lookup" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Employee Details</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="employee_designation_lookup-readonly<%%RND1%%>"><%%COMBOTEXT(employee_designation_lookup)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Current Review Period From Date -->
+		<div class="form-group employees_appraisal_table-current_review_period_from" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Current Review Period From Date</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(current_review_period_from)%%></div>
+			</div>
+		</div>
+		<!-- Field: Current Review Period To Date -->
+		<div class="form-group employees_appraisal_table-current_review_period_to" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Current Review Period To Date</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(current_review_period_to)%%></div>
+			</div>
+		</div>
+		<!-- Field: Roles & Responsibilities -->
+		<div class="form-group employees_appraisal_table-roles" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Roles & Responsibilities</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(roles)%%></div>
+			</div>
+		</div>
+		<!-- Field: Employee Self-explanation -->
+		<div class="form-group employees_appraisal_table-self_explanation" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Employee Self-explanation</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(self_explanation)%%></div>
+			</div>
+		</div>
+		<!-- Field: Upload file 1 -->
+		<div class="form-group employees_appraisal_table-upload_file_1" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Upload file 1</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="upload_file_1-link" href="link.php?t=employees_appraisal_table&f=upload_file_1&i=<%%VALUE(id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-download-alt" title="<%%VALUE(upload_file_1)%%>"></i></a><script>$j(function() { var e_upload_file_1 = '<%%VALUE(upload_file_1)%%>'; if(e_upload_file_1 == '' || e_upload_file_1 == '&nbsp;' || e_upload_file_1 == 'blank.gif') $j('#upload_file_1-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Upload file 2 -->
+		<div class="form-group employees_appraisal_table-upload_file_2" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Upload file 2</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="upload_file_2-link" href="link.php?t=employees_appraisal_table&f=upload_file_2&i=<%%VALUE(id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-download-alt" title="<%%VALUE(upload_file_2)%%>"></i></a><script>$j(function() { var e_upload_file_2 = '<%%VALUE(upload_file_2)%%>'; if(e_upload_file_2 == '' || e_upload_file_2 == '&nbsp;' || e_upload_file_2 == 'blank.gif') $j('#upload_file_2-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Upload file 3 -->
+		<div class="form-group employees_appraisal_table-upload_file_3" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Upload file 3</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="upload_file_3-link" href="link.php?t=employees_appraisal_table&f=upload_file_3&i=<%%VALUE(id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-download-alt" title="<%%VALUE(upload_file_3)%%>"></i></a><script>$j(function() { var e_upload_file_3 = '<%%VALUE(upload_file_3)%%>'; if(e_upload_file_3 == '' || e_upload_file_3 == '&nbsp;' || e_upload_file_3 == 'blank.gif') $j('#upload_file_3-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Reporting Officer Feedback on the Employee Responsibilities -->
+		<div class="form-group employees_appraisal_table-reporting_officer_feedback" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Reporting Officer Feedback on the Employee Responsibilities</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(reporting_officer_feedback)%%></div>
+			</div>
+		</div>
+		<!-- Field: Observations by the Reporting Officer -->
+		<div class="form-group employees_appraisal_table-observations_by_reporting_officer" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Observations by the Reporting Officer</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(observations_by_reporting_officer)%%></div>
+			</div>
+		</div>
+		<!-- Field: Overall Rating by the Reporting Officer -->
+		<div class="form-group employees_appraisal_table-overall_rating" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Overall Rating by the Reporting Officer</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(overall_rating)%%></div>
+			</div>
+		</div>
+		<!-- Field: Appraisal Feedback Status by Reporting Officer -->
+		<div class="form-group employees_appraisal_table-reporting_appraisal_status" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Appraisal Feedback Status by Reporting Officer</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(reporting_appraisal_status)%%></div>
+			</div>
+		</div>
+		<!-- Field: Reviewing officer -->
+		<div class="form-group employees_appraisal_table-reviewing_officer" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Reviewing officer</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="reviewing_officer<%%RND1%%>"><%%COMBOTEXT(reviewing_officer)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Reviewing Officer Remarks -->
+		<div class="form-group employees_appraisal_table-reviewing_officer_remarks" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Reviewing Officer Remarks</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(reviewing_officer_remarks)%%></div>
+			</div>
+		</div>
+		<!-- Field: Appraisal Feedback Status by Reviewing Officer -->
+		<div class="form-group employees_appraisal_table-reviewing_appraisal_status" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Appraisal Feedback Status by Reviewing Officer</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(reviewing_appraisal_status)%%></div>
+			</div>
+		</div>
+		<!-- Field: Created By Username -->
+		<div class="form-group employees_appraisal_table-created_by_username" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Created By Username</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(created_by_username)%%></div>
+			</div>
+		</div>
+		<!-- Field: Last Updated by Username -->
+		<div class="form-group employees_appraisal_table-last_updated_by_username" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Last Updated by Username</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(last_updated_by_username)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>

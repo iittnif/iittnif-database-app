@@ -1,0 +1,46 @@
+		<td colspan="11" class="row">
+			<div class="col-md-6">
+				<dl class="dl-horizontal">
+					<dt class="suggestion-suggestion_id-caption field-caption-tv">ID</dt>
+					<dd id="suggestion-suggestion_id-<%%VALUE(suggestion_id)%%>" class="suggestion-suggestion_id text-right text-bold"><%%VALUE(suggestion_id)%%></dd>
+
+					<dt class="suggestion-department-caption field-caption-tv">Suggestion Related to Department</dt>
+					<dd id="suggestion-department-<%%VALUE(suggestion_id)%%>" class="suggestion-department text-bold"><%%VALUE(department)%%></dd>
+
+					<dt class="suggestion-suggestion-caption field-caption-tv">Suggestion / Complaint</dt>
+					<dd id="suggestion-suggestion-<%%VALUE(suggestion_id)%%>" class="suggestion-suggestion text-bold"><%%VALUE(suggestion)%%></dd>
+
+					<dt class="suggestion-attachment-caption field-caption-tv">Attachment</dt>
+					<dd id="suggestion-attachment-<%%VALUE(suggestion_id)%%>" class="suggestion-attachment text-bold"><a href="link.php?t=suggestion&f=attachment&i=<%%VALUE(suggestion_id)%%>" target="_blank" title="<%%VALUE(attachment)%%>" class="btn btn-default"><i class="glyphicon glyphicon-lg glyphicon-picture text-info"></i></a></dd>
+
+					<dt class="suggestion-department_remarks-caption field-caption-tv">Remarks of Department/Office Head</dt>
+					<dd id="suggestion-department_remarks-<%%VALUE(suggestion_id)%%>" class="suggestion-department_remarks text-bold"><%%VALUE(department_remarks)%%></dd>
+
+					<dt class="suggestion-ceo_pd_remarks-caption field-caption-tv">Remarks of CEO/PD</dt>
+					<dd id="suggestion-ceo_pd_remarks-<%%VALUE(suggestion_id)%%>" class="suggestion-ceo_pd_remarks text-bold"><%%VALUE(ceo_pd_remarks)%%></dd>
+
+				</dl>
+			</div>
+			<div class="col-md-6">
+				<dl class="dl-horizontal">
+					<dt class="suggestion-status-caption field-caption-tv">Status</dt>
+					<dd id="suggestion-status-<%%VALUE(suggestion_id)%%>" class="suggestion-status text-bold"><%%VALUE(status)%%></dd>
+
+					<dt class="suggestion-created_by_username-caption field-caption-tv">Created by Username</dt>
+					<dd id="suggestion-created_by_username-<%%VALUE(suggestion_id)%%>" class="suggestion-created_by_username text-bold"><%%VALUE(created_by_username)%%></dd>
+
+					<dt class="suggestion-created_at-caption field-caption-tv">Created At</dt>
+					<dd id="suggestion-created_at-<%%VALUE(suggestion_id)%%>" class="suggestion-created_at text-bold"><%%VALUE(created_at)%%></dd>
+
+					<dt class="suggestion-last_updated_by_username-caption field-caption-tv">Last Updated By Username</dt>
+					<dd id="suggestion-last_updated_by_username-<%%VALUE(suggestion_id)%%>" class="suggestion-last_updated_by_username text-bold"><%%VALUE(last_updated_by_username)%%></dd>
+
+					<dt class="suggestion-last_updated_at-caption field-caption-tv">Last Updated At</dt>
+					<dd id="suggestion-last_updated_at-<%%VALUE(suggestion_id)%%>" class="suggestion-last_updated_at text-bold"><%%VALUE(last_updated_at)%%></dd>
+
+				</dl>
+			</div>
+		</td>
+		<script>$j(function() {
+			var e_attachment = '<%%VALUE(attachment)%%>'; if(e_attachment == '' || e_attachment == '&nbsp;') $j(/*<*/ '#suggestion-attachment-<%%VALUE(suggestion_id)%%>' /*>*/).html('');
+		});</script>

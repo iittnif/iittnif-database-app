@@ -1,0 +1,372 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/employees_appraisal_table-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="employees_appraisal_table_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="employees_appraisal_table_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="employees_appraisal_table_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Employee Details -->
+				<div class="form-group employees_appraisal_table-employee_designation_lookup">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" data-parent_link="view_parent_modal">Employee Details</label>
+					<div class="col-lg-9">
+						<div class="form-control-static">
+							<span id="employee_designation_lookup-readonly"><%%COMBOTEXT(employee_designation_lookup)%%></span>
+							<%%PLINK(employee_designation_lookup)%%>
+						</div>
+					</div>
+				</div>
+
+				<!-- Field: Current Review Period From Date -->
+				<div class="form-group employees_appraisal_table-current_review_period_from">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="current_review_period_from-dd">Current Review Period From Date</label>
+					<div class="col-lg-9">
+						<%%COMBO(current_review_period_from)%%>
+					</div>
+				</div>
+
+				<!-- Field: Current Review Period To Date -->
+				<div class="form-group employees_appraisal_table-current_review_period_to">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="current_review_period_to-dd">Current Review Period To Date</label>
+					<div class="col-lg-9">
+						<%%COMBO(current_review_period_to)%%>
+					</div>
+				</div>
+
+				<!-- Field: Roles & Responsibilities -->
+				<div class="form-group employees_appraisal_table-roles">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="roles">Roles & Responsibilities</label>
+					<div class="col-lg-9">
+						<textarea maxlength="65500" class="form-control" name="roles" id="roles" rows=" 5"><%%VALUE(roles)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: Employee Self-explanation -->
+				<div class="form-group employees_appraisal_table-self_explanation">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="self_explanation">Employee Self-explanation</label>
+					<div class="col-lg-9">
+						<textarea maxlength="65500" class="form-control" name="self_explanation" id="self_explanation" rows=" 5"><%%VALUE(self_explanation)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: Upload file 1 -->
+				<div class="form-group employees_appraisal_table-upload_file_1">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Upload file 1 <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#upload_file_1-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="upload_file_1-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 100 KB.<br>Allowed file types: ppt, pptx, pptm, pdf, ppsx, ppsm, pps, odp</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="row" style="margin-right: 0; margin-left: 0;">
+								<div class="col-lg-8 col-md-6" style="padding-left: 0;"><a id="upload_file_1-link" href="link.php?t=employees_appraisal_table&f=upload_file_1&i=<%%VALUE(id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-download-alt" title="<%%VALUE(upload_file_1)%%>" style="font-size: 4em;"></i></a></div>
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<div class="col-lg-4 col-md-6 well upload-toolbox">
+									<%%REMOVEFILE(upload_file_1)%%>
+									<%%UPLOADFILE(upload_file_1)%%>
+									<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+									<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+								</div>
+							</div>
+						</div>
+						<script>/* disable empty links */ $j(() => { const e_upload_file_1 = '<%%VALUE(upload_file_1)%%>'; if(e_upload_file_1 == '' || e_upload_file_1 == '&nbsp;' || e_upload_file_1 == 'blank.gif') { $j('#upload_file_1-link').hide(); $j('#upload_file_1-image').parents('a').attr('href', '').on('click', (e) => e.preventDefault()); } });</script>
+					</div>
+				</div>
+
+				<!-- Field: Upload file 2 -->
+				<div class="form-group employees_appraisal_table-upload_file_2">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Upload file 2 <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#upload_file_2-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="upload_file_2-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 100 KB.<br>Allowed file types: ppt, pptx, pptm, pdf, ppsx, ppsm, pps, odp</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="row" style="margin-right: 0; margin-left: 0;">
+								<div class="col-lg-8 col-md-6" style="padding-left: 0;"><a id="upload_file_2-link" href="link.php?t=employees_appraisal_table&f=upload_file_2&i=<%%VALUE(id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-download-alt" title="<%%VALUE(upload_file_2)%%>" style="font-size: 4em;"></i></a></div>
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<div class="col-lg-4 col-md-6 well upload-toolbox">
+									<%%REMOVEFILE(upload_file_2)%%>
+									<%%UPLOADFILE(upload_file_2)%%>
+									<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+									<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+								</div>
+							</div>
+						</div>
+						<script>/* disable empty links */ $j(() => { const e_upload_file_2 = '<%%VALUE(upload_file_2)%%>'; if(e_upload_file_2 == '' || e_upload_file_2 == '&nbsp;' || e_upload_file_2 == 'blank.gif') { $j('#upload_file_2-link').hide(); $j('#upload_file_2-image').parents('a').attr('href', '').on('click', (e) => e.preventDefault()); } });</script>
+					</div>
+				</div>
+
+				<!-- Field: Upload file 3 -->
+				<div class="form-group employees_appraisal_table-upload_file_3">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Upload file 3 <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#upload_file_3-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="upload_file_3-description"><div class="alert alert-info bspacer-xs">Maximum file size allowed: 100 KB.<br>Allowed file types: ppt, pptx, pptm, pdf, ppsx, ppsm, pps, odp</div></span>
+						<div class="form-control-static well well-sm">
+							<div class="row" style="margin-right: 0; margin-left: 0;">
+								<div class="col-lg-8 col-md-6" style="padding-left: 0;"><a id="upload_file_3-link" href="link.php?t=employees_appraisal_table&f=upload_file_3&i=<%%VALUE(id)%%>" target="_blank" class="rspacer-lg"><i class="glyphicon glyphicon-download-alt" title="<%%VALUE(upload_file_3)%%>" style="font-size: 4em;"></i></a></div>
+								<div class="hidden-md hidden-lg vspacer-lg"></div>
+								<div class="col-lg-4 col-md-6 well upload-toolbox">
+									<%%REMOVEFILE(upload_file_3)%%>
+									<%%UPLOADFILE(upload_file_3)%%>
+									<div class="text-bold text-danger file-type-error hidden"><%%TRANSLATION(invalid file type)%%></div>
+									<div class="text-bold text-danger file-size-error hidden"><%%TRANSLATION(file too large)%%></div>
+								</div>
+							</div>
+						</div>
+						<script>/* disable empty links */ $j(() => { const e_upload_file_3 = '<%%VALUE(upload_file_3)%%>'; if(e_upload_file_3 == '' || e_upload_file_3 == '&nbsp;' || e_upload_file_3 == 'blank.gif') { $j('#upload_file_3-link').hide(); $j('#upload_file_3-image').parents('a').attr('href', '').on('click', (e) => e.preventDefault()); } });</script>
+					</div>
+				</div>
+
+				<!-- Field: Reporting Officer Feedback on the Employee Responsibilities -->
+				<div class="form-group employees_appraisal_table-reporting_officer_feedback">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="reporting_officer_feedback">Reporting Officer Feedback on the Employee Responsibilities</label>
+					<div class="col-lg-9">
+						<textarea maxlength="65500" class="form-control" name="reporting_officer_feedback" id="reporting_officer_feedback" rows=" 5"><%%VALUE(reporting_officer_feedback)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: Observations by the Reporting Officer -->
+				<div class="form-group employees_appraisal_table-observations_by_reporting_officer">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="observations_by_reporting_officer">Observations by the Reporting Officer</label>
+					<div class="col-lg-9">
+						<textarea maxlength="65500" class="form-control" name="observations_by_reporting_officer" id="observations_by_reporting_officer" rows=" 5"><%%VALUE(observations_by_reporting_officer)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: Overall Rating by the Reporting Officer -->
+				<div class="form-group employees_appraisal_table-overall_rating">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="overall_rating">Overall Rating by the Reporting Officer <i class="glyphicon glyphicon-info-sign text-info" data-toggle="collapse" data-target="#overall_rating-description"></i></label>
+					<div class="col-lg-9">
+						<span class="help-block bspacer-xs collapse" id="overall_rating-description"><div class="alert alert-info bspacer-xs">Scale of Rating: 1-Poor | 2-Satisfactory | 3-Average | 4-Good | 5-Excellent</div></span>
+						<%%COMBO(overall_rating)%%>
+					</div>
+				</div>
+
+				<!-- Field: Appraisal Feedback Status by Reporting Officer -->
+				<div class="form-group employees_appraisal_table-reporting_appraisal_status">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="reporting_appraisal_status">Appraisal Feedback Status by Reporting Officer</label>
+					<div class="col-lg-9">
+						<%%COMBO(reporting_appraisal_status)%%>
+					</div>
+				</div>
+
+				<!-- Field: Reviewing officer -->
+				<div class="form-group employees_appraisal_table-reviewing_officer">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="reviewing_officer" data-parent_link="view_parent_modal">Reviewing officer</label>
+					<div class="col-lg-9">
+						<div class="lookup-flex"><%%COMBO(reviewing_officer)%%><%%PLINK(reviewing_officer)%%><%%ADDNEW(user_table)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Reviewing Officer Remarks -->
+				<div class="form-group employees_appraisal_table-reviewing_officer_remarks">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="reviewing_officer_remarks">Reviewing Officer Remarks</label>
+					<div class="col-lg-9">
+						<textarea maxlength="65500" class="form-control" name="reviewing_officer_remarks" id="reviewing_officer_remarks" rows=" 5"><%%VALUE(reviewing_officer_remarks)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: Appraisal Feedback Status by Reviewing Officer -->
+				<div class="form-group employees_appraisal_table-reviewing_appraisal_status">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="reviewing_appraisal_status">Appraisal Feedback Status by Reviewing Officer</label>
+					<div class="col-lg-9">
+						<%%COMBO(reviewing_appraisal_status)%%>
+					</div>
+				</div>
+
+				<!-- Field: Created By Username -->
+				<div class="form-group employees_appraisal_table-created_by_username">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Created By Username</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="created_by_username"><%%VALUE(created_by_username)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Last Updated by Username -->
+				<div class="form-group employees_appraisal_table-last_updated_by_username">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Last Updated by Username</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="last_updated_by_username"><%%VALUE(last_updated_by_username)%%></div>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2 dv-action-buttons" id="employees_appraisal_table_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			$j('#employees_appraisal_table_dv_container-loading').addClass('hidden');
+			$j('#employees_appraisal_table_dv_container').removeClass('hidden');
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) AppGini.focusFormElement('employees_appraisal_table', 'current_review_period_from');
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					const fieldId = $j(this).prevAll('input:hidden').eq(0).attr('id');
+					const pt = $j(this).attr('id').replace(/_add_new$/, '');
+
+					modal_window({
+						url: `${pt}_view.php?addNew_x=1&Embedded=1`,
+						close: function() {
+							$j(`#${fieldId}-container`).select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = AppGini.localStorage.getItem(`${pt}_last_added_id`);
+							if(new_id === null) return;
+
+							AppGini.localStorage.removeItem(`${pt}_last_added_id`);
+							AppGini.lookupText({
+								id: new_id,
+								table: AppGini.currentTableName(),
+								field: fieldId,
+								callback: function(data) {
+									$j(`#${fieldId}-container`).select2('data', data, true);
+								}
+							});
+						},
+						beforeClose: AppGini.confirmBeforeClosingModal,
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				const pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				const fieldId = $j(this).prevAll('input:hidden').eq(0).attr('id');
+
+				let parent_id = '{empty_value}';
+				if(fieldId) {
+					parent_id = $j(`#${fieldId}`).val();
+				} else if($j(this).prevAll('[type=radio]').length) { /* handle radio lookups */
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				} else {
+					parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id !== undefined && parent_id !== '') {
+					const parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: `${pt}_view.php?Embedded=1&SelectedID=${encodeURIComponent(parent_id)}`,
+								close: function() {
+									$j(`#${fieldId}-container`).select2('focus').select2('focus');
+
+									// update lookup text in case the parent record was updated
+									AppGini.lookupText({
+										id: parent_id,
+										table: AppGini.currentTableName(),
+										field: fieldId,
+										cache: false,
+										callback: function(data) {
+											$j(`#${fieldId}-container`).select2('data', data, true);
+
+											// update auto-fills
+											const updaterName = `${fieldId}_update_autofills`;
+											if(typeof(window[updaterName]) == 'function')
+												window[updaterName]();
+										}
+									});
+								},
+								beforeClose: AppGini.confirmBeforeClosingModal,
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = `${pt}_view.php?Embedded=${embedded_mode ? '1' : ''}&SelectedID=${encodeURIComponent(parent_id)}`;
+							break;
+						case 'view_parent_new_window':
+							window.open(`${pt}_view.php?SelectedID=${encodeURIComponent(parent_id)}`);
+							break;
+					}
+
+				}
+			});
+
+			employees_appraisal_tableUniqueFields.forEach(fieldName => enforce_uniqueness('employees_appraisal_table', fieldName));
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=employees_appraisal_table&id=<%%URLVALUE(id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=employees_appraisal_table&id=<%%URLVALUE(id)%%>');
+					}
+				);
+			}
+		});
+
+		var employees_appraisal_tableUniqueFields = [
+		];
+	</script>

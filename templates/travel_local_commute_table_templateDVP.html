@@ -1,0 +1,127 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: First name -->
+		<div class="form-group travel_local_commute_table-first_name" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">First name</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(first_name)%%></div>
+			</div>
+		</div>
+		<!-- Field: Last name -->
+		<div class="form-group travel_local_commute_table-last_name" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Last name</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(last_name)%%></div>
+			</div>
+		</div>
+		<!-- Field: Age -->
+		<div class="form-group travel_local_commute_table-age" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Age</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(age)%%></div>
+			</div>
+		</div>
+		<!-- Field: Gender -->
+		<div class="form-group travel_local_commute_table-gender" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Gender</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(gender)%%></div>
+			</div>
+		</div>
+		<!-- Field: Mobile number -->
+		<div class="form-group travel_local_commute_table-mobile_number" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Mobile number</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(mobile_number)%%></div>
+			</div>
+		</div>
+		<!-- Field: Local Commute Type -->
+		<div class="form-group travel_local_commute_table-local_commute_type" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Local Commute Type</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(local_commute_type)%%></div>
+			</div>
+		</div>
+		<!-- Field: From Place -->
+		<div class="form-group travel_local_commute_table-from_place" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">From Place</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(from_place)%%></div>
+			</div>
+		</div>
+		<!-- Field: To Place -->
+		<div class="form-group travel_local_commute_table-to_place" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">To Place</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(to_place)%%></div>
+			</div>
+		</div>
+		<!-- Field: Description -->
+		<div class="form-group travel_local_commute_table-description" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Description</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(description)%%></div>
+			</div>
+		</div>
+		<!-- Field: Approval Status -->
+		<div class="form-group travel_local_commute_table-approval_status" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Approval Status</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(approval_status)%%></div>
+			</div>
+		</div>
+		<!-- Field: Approval remarks -->
+		<div class="form-group travel_local_commute_table-approval_remarks" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Approval remarks</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(approval_remarks)%%></div>
+			</div>
+		</div>
+		<!-- Field: Approved by -->
+		<div class="form-group travel_local_commute_table-approved_by" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Approved by</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(approved_by)%%></div>
+			</div>
+		</div>
+		<!-- Field: Created By Username -->
+		<div class="form-group travel_local_commute_table-created_by_username" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Created By Username</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(created_by_username)%%></div>
+			</div>
+		</div>
+		<!-- Field: Last Updated by Username -->
+		<div class="form-group travel_local_commute_table-last_updated_by_username" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Last Updated by Username</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(last_updated_by_username)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>

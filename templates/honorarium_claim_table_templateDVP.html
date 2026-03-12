@@ -1,0 +1,183 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Name of Advisor/Expert/Consultant -->
+		<div class="form-group honorarium_claim_table-name_of_advisor" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Name of Advisor/Expert/Consultant</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(name_of_advisor)%%></div>
+			</div>
+		</div>
+		<!-- Field: Eamil ID of Advisor/Consultant -->
+		<div class="form-group honorarium_claim_table-email_advisor" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Eamil ID of Advisor/Consultant</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(email_advisor)%%></div>
+			</div>
+		</div>
+		<!-- Field: Department of TIH -->
+		<div class="form-group honorarium_claim_table-department_of_tih" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Department of TIH</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(department_of_tih)%%></div>
+			</div>
+		</div>
+		<!-- Field: Bank Account No. -->
+		<div class="form-group honorarium_claim_table-bank_account_no" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Bank Account No.</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(bank_account_no)%%></div>
+			</div>
+		</div>
+		<!-- Field: IFSC Code -->
+		<div class="form-group honorarium_claim_table-ifsc_code" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">IFSC Code</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(ifsc_code)%%></div>
+			</div>
+		</div>
+		<!-- Field: Bank Name -->
+		<div class="form-group honorarium_claim_table-bank_name" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Bank Name</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(bank_name)%%></div>
+			</div>
+		</div>
+		<!-- Field: PAN -->
+		<div class="form-group honorarium_claim_table-pan" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">PAN</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(pan)%%></div>
+			</div>
+		</div>
+		<!-- Field: Place of work (Visit) / Online -->
+		<div class="form-group honorarium_claim_table-place_of_work" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Place of work (Visit) / Online</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(place_of_work)%%></div>
+			</div>
+		</div>
+		<!-- Field: Date -->
+		<div class="form-group honorarium_claim_table-date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Date</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(date)%%></div>
+			</div>
+		</div>
+		<!-- Field: No. of hours -->
+		<div class="form-group honorarium_claim_table-no_of_hours" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">No. of hours</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(no_of_hours)%%></div>
+			</div>
+		</div>
+		<!-- Field: Case Reference Email Subject (If Any) -->
+		<div class="form-group honorarium_claim_table-case_reference_email_subject" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Case Reference Email Subject (If Any)</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(case_reference_email_subject)%%></div>
+			</div>
+		</div>
+		<!-- Field: Activities/Deliverables -->
+		<div class="form-group honorarium_claim_table-activities" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Activities/Deliverables</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(activities)%%></div>
+			</div>
+		</div>
+		<!-- Field: Others if any (Optional) -->
+		<div class="form-group honorarium_claim_table-others_if_any" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Others if any (Optional)</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(others_if_any)%%></div>
+			</div>
+		</div>
+		<!-- Field: Coordinated by TIH User (For Office Use of TIH) -->
+		<div class="form-group honorarium_claim_table-coordinated_by_tih_user" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Coordinated by TIH User (For Office Use of TIH)</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><span id="coordinated_by_tih_user<%%RND1%%>"><%%COMBOTEXT(coordinated_by_tih_user)%%></span></div>
+			</div>
+		</div>
+		<!-- Field: Payment date (For Office Use of TIH) -->
+		<div class="form-group honorarium_claim_table-payment_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Payment date (For Office Use of TIH)</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(payment_date)%%></div>
+			</div>
+		</div>
+		<!-- Field: Amount paid (For Office Use of TIH) -->
+		<div class="form-group honorarium_claim_table-amount_paid" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Amount paid (For Office Use of TIH)</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(amount_paid)%%></div>
+			</div>
+		</div>
+		<!-- Field: Transaction details (For Office Use of TIH) -->
+		<div class="form-group honorarium_claim_table-transaction_details" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Transaction details (For Office Use of TIH)</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(transaction_details)%%></div>
+			</div>
+		</div>
+		<!-- Field: Approval Status (For Office Use of TIH) -->
+		<div class="form-group honorarium_claim_table-approval_status" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Approval Status (For Office Use of TIH)</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(approval_status)%%></div>
+			</div>
+		</div>
+		<!-- Field: Remarks for Approval (For Office Use of TIH) -->
+		<div class="form-group honorarium_claim_table-remarks_for_approval" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Remarks for Approval (For Office Use of TIH)</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(remarks_for_approval)%%></div>
+			</div>
+		</div>
+		<!-- Field: Created by Username -->
+		<div class="form-group honorarium_claim_table-created_by_username" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Created by Username</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(created_by_username)%%></div>
+			</div>
+		</div>
+		<!-- Field: Last Updated By Username -->
+		<div class="form-group honorarium_claim_table-last_updated_by_username" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Last Updated By Username</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(last_updated_by_username)%%></div>
+			</div>
+		</div>
+		<!-- Field: Approved At -->
+		<div class="form-group honorarium_claim_table-last_updated_at" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Approved At</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(last_updated_at)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>

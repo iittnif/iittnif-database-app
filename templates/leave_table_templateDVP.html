@@ -1,0 +1,113 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Approval From -->
+		<div class="form-group leave_table-approval_from" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Approval From</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(approval_from)%%></div>
+			</div>
+		</div>
+		<!-- Field: Type -->
+		<div class="form-group leave_table-type" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Type</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(type)%%></div>
+			</div>
+		</div>
+		<!-- Field: Leave type -->
+		<div class="form-group leave_table-leave_type" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Leave type</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(leave_type)%%></div>
+			</div>
+		</div>
+		<!-- Field: Purpose of leave -->
+		<div class="form-group leave_table-purpose_of_leave" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Purpose of leave</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(purpose_of_leave)%%></div>
+			</div>
+		</div>
+		<!-- Field: From Date -->
+		<div class="form-group leave_table-from_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">From Date</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(from_date)%%></div>
+			</div>
+		</div>
+		<!-- Field: To Date & Time -->
+		<div class="form-group leave_table-to_date" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">To Date & Time</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(to_date)%%></div>
+			</div>
+		</div>
+		<!-- Field: Supporting Document (Image) -->
+		<div class="form-group leave_table-upload_img" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Supporting Document (Image)</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(upload_img)%%></div>
+			</div>
+		</div>
+		<!-- Field: Supporting Document (PDF) -->
+		<div class="form-group leave_table-upload_pdf" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Supporting Document (PDF)</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="upload_pdf-link" href="link.php?t=leave_table&f=upload_pdf&i=<%%VALUE(id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-file" title="<%%VALUE(upload_pdf)%%>"></i></a><script>$j(function() { var e_upload_pdf = '<%%VALUE(upload_pdf)%%>'; if(e_upload_pdf == '' || e_upload_pdf == '&nbsp;' || e_upload_pdf == 'blank.gif') $j('#upload_pdf-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Approval status -->
+		<div class="form-group leave_table-approval_status" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Approval status</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(approval_status)%%></div>
+			</div>
+		</div>
+		<!-- Field: Approval remarks -->
+		<div class="form-group leave_table-approval_remarks" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Approval remarks</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(approval_remarks)%%></div>
+			</div>
+		</div>
+		<!-- Field: Created by Username -->
+		<div class="form-group leave_table-created_by_username" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Created by Username</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(created_by_username)%%></div>
+			</div>
+		</div>
+		<!-- Field: Last Updated By Username -->
+		<div class="form-group leave_table-last_updated_by_username" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Last Updated By Username</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(last_updated_by_username)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>

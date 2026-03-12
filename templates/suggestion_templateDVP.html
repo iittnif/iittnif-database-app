@@ -1,0 +1,85 @@
+<!-- Edit this file to change the layout of the detail view print preview page -->
+
+
+<div class="panel-heading"><h3 class="panel-title">
+	<strong><%%DETAIL_VIEW_TITLE%%></strong>
+	<div class="hidden-print pull-right">
+		<div class="btn-group">
+			<button type="button" id="print" onclick="window.print();" title="<%%TRANSLATION(Print)%%>" class="btn btn-primary"><i class="glyphicon glyphicon-print"></i> <%%TRANSLATION(Print)%%></button>
+			<button type="submit" id="back" title="<%%TRANSLATION(Cancel Printing)%%>" class="btn btn-default"><i class="glyphicon glyphicon-remove-circle"></i> <%%TRANSLATION(Cancel Printing)%%></button>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</h3></div>
+
+<div class="panel-body">
+	<fieldset class="form-horizontal">
+		<!-- Field: Suggestion Related to Department -->
+		<div class="form-group suggestion-department" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Suggestion Related to Department</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(department)%%></div>
+			</div>
+		</div>
+		<!-- Field: Suggestion / Complaint -->
+		<div class="form-group suggestion-suggestion" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Suggestion / Complaint</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(suggestion)%%></div>
+			</div>
+		</div>
+		<!-- Field: Attachment -->
+		<div class="form-group suggestion-attachment" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Attachment</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><a id="attachment-link" href="link.php?t=suggestion&f=attachment&i=<%%VALUE(suggestion_id)%%>" target="_blank"><i class="glyphicon glyphicon-lg glyphicon-picture" title="<%%VALUE(attachment)%%>"></i></a><script>$j(function() { var e_attachment = '<%%VALUE(attachment)%%>'; if(e_attachment == '' || e_attachment == '&nbsp;' || e_attachment == 'blank.gif') $j('#attachment-link').hide(); });</script></div>
+			</div>
+		</div>
+		<!-- Field: Remarks of Department/Office Head -->
+		<div class="form-group suggestion-department_remarks" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Remarks of Department/Office Head</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(department_remarks)%%></div>
+			</div>
+		</div>
+		<!-- Field: Remarks of CEO/PD -->
+		<div class="form-group suggestion-ceo_pd_remarks" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Remarks of CEO/PD</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(ceo_pd_remarks)%%></div>
+			</div>
+		</div>
+		<!-- Field: Status -->
+		<div class="form-group suggestion-status" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Status</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%COMBOTEXT(status)%%></div>
+			</div>
+		</div>
+		<!-- Field: Created by Username -->
+		<div class="form-group suggestion-created_by_username" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Created by Username</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(created_by_username)%%></div>
+			</div>
+		</div>
+		<!-- Field: Last Updated By Username -->
+		<div class="form-group suggestion-last_updated_by_username" style="border-bottom: dotted 1px #DDD;">
+			<label class="col-xs-3 control-label">Last Updated By Username</label>
+			<div class="col-xs-9">
+				<div class="form-control-static"><%%VALUE(last_updated_by_username)%%></div>
+			</div>
+		</div>
+	</fieldset>
+</div>
+<script>
+	$j(function() {
+		// render read-only checkboxes in DVP
+		$j('form input[type=checkbox]:not(.hidden):checked')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-check"></i>');
+		$j('form input[type=checkbox]:not(.hidden):not(:checked)')
+			.addClass('hidden')
+			.after('<i class="glyphicon glyphicon-unchecked"></i>')
+	})
+</script>

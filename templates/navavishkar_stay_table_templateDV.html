@@ -1,0 +1,342 @@
+<!-- To change the layout of the detail view form, we recommend using JS code in hooks/navavishkar_stay_table-dv.js rather than editing this file -->
+
+<div id="detail-view"></div>
+<div class="panel-heading"><h3 class="panel-title"><strong><%%DETAIL_VIEW_TITLE%%></strong></h3></div>
+
+<div id="navavishkar_stay_table_dv_container-loading" class="text-center text-info text-bold vspacer-lg"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+
+<div class="panel-body hidden" id="navavishkar_stay_table_dv_container">
+	<!-- child links -->
+	<div class="row vspacer-md">
+		<div class="col-xs-12 children-links">
+			<input type="hidden" id="navavishkar_stay_payment_table_hclink" value="navavishkar_stay_payment_table_view.php?filterer_navavishakr_stay_details=<%%URLVALUE(id)%%>&<%%EMBEDDED%%>">
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<hr class="hidden-xs hidden-sm">
+
+	<div class="row">
+		<!-- form inputs -->
+		<div class="col-md-8 col-lg-10" id="navavishkar_stay_table_dv_form">
+			<fieldset class="form-horizontal">
+
+				<!-- Field: Full Name -->
+				<div class="form-group navavishkar_stay_table-full_name">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="full_name">Full Name</label>
+					<div class="col-lg-9">
+						<input maxlength="255" type="text" class="form-control" name="full_name" id="full_name" value="<%%VALUE(full_name)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Employee ID -->
+				<div class="form-group navavishkar_stay_table-emp_id">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="emp_id">Employee ID</label>
+					<div class="col-lg-9">
+						<input maxlength="255" type="text" class="form-control" name="emp_id" id="emp_id" value="<%%VALUE(emp_id)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Department -->
+				<div class="form-group navavishkar_stay_table-department">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="department">Department</label>
+					<div class="col-lg-9">
+						<input maxlength="255" type="text" class="form-control" name="department" id="department" value="<%%VALUE(department)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Designation -->
+				<div class="form-group navavishkar_stay_table-designation">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="designation">Designation</label>
+					<div class="col-lg-9">
+						<input maxlength="255" type="text" class="form-control" name="designation" id="designation" value="<%%VALUE(designation)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Contact Email -->
+				<div class="form-group navavishkar_stay_table-contact_email">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="contact_email">Contact Email</label>
+					<div class="col-lg-9">
+						<input maxlength="255" type="text" class="form-control" name="contact_email" id="contact_email" value="<%%VALUE(contact_email)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Contact Number -->
+				<div class="form-group navavishkar_stay_table-contact_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="contact_number">Contact Number</label>
+					<div class="col-lg-9">
+						<input maxlength="255" type="text" class="form-control" name="contact_number" id="contact_number" value="<%%VALUE(contact_number)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Room number -->
+				<div class="form-group navavishkar_stay_table-room_number">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="room_number">Room number</label>
+					<div class="col-lg-9">
+						<input maxlength="255" type="text" class="form-control" name="room_number" id="room_number" value="<%%VALUE(room_number)%%>">
+					</div>
+				</div>
+
+				<!-- Field: Check in date -->
+				<div class="form-group navavishkar_stay_table-check_in_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="check_in_date-dd">Check in date</label>
+					<div class="col-lg-9">
+						<%%COMBO(check_in_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Checkout date -->
+				<div class="form-group navavishkar_stay_table-checkout_date">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="checkout_date-dd">Checkout date</label>
+					<div class="col-lg-9">
+						<%%COMBO(checkout_date)%%>
+					</div>
+				</div>
+
+				<!-- Field: Reason for stay -->
+				<div class="form-group navavishkar_stay_table-reason_for_stay">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="reason_for_stay">Reason for stay</label>
+					<div class="col-lg-9">
+						<textarea maxlength="65500" class="form-control" name="reason_for_stay" id="reason_for_stay" rows=" 5"><%%VALUE(reason_for_stay)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: Approval status -->
+				<div class="form-group navavishkar_stay_table-approval_status">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="approval_status">Approval status</label>
+					<div class="col-lg-9">
+						<%%COMBO(approval_status)%%>
+					</div>
+				</div>
+
+				<!-- Field: Approval remarks -->
+				<div class="form-group navavishkar_stay_table-approval_remarks">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3" for="approval_remarks">Approval remarks</label>
+					<div class="col-lg-9">
+						<textarea maxlength="65500" class="form-control" name="approval_remarks" id="approval_remarks" rows=" 5"><%%VALUE(approval_remarks)%%></textarea>
+					</div>
+				</div>
+
+				<!-- Field: Created By Username -->
+				<div class="form-group navavishkar_stay_table-created_by_username">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Created By Username</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="created_by_username"><%%VALUE(created_by_username)%%></div>
+					</div>
+				</div>
+
+				<!-- Field: Last Updated by Username -->
+				<div class="form-group navavishkar_stay_table-last_updated_by_username">
+					<hr class="hidden-md hidden-lg">
+					<label class="control-label col-lg-3">Last Updated by Username</label>
+					<div class="col-lg-9">
+						<div class="form-control-static" id="last_updated_by_username"><%%VALUE(last_updated_by_username)%%></div>
+					</div>
+				</div>
+
+			</fieldset>
+		</div>
+
+		<!-- DV action buttons -->
+		<hr class="hidden-md hidden-lg">
+		<div class="col-md-4 col-lg-2 dv-action-buttons" id="navavishkar_stay_table_dv_action_buttons">
+			<div class="btn-toolbar">
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%UPDATE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%DESELECT_BUTTON%%>
+					<%%DVPRINT_BUTTON%%>
+					<%%DELETE_BUTTON%%>
+				</div><p></p>
+				<div class="btn-group-vertical btn-group-lg" style="width: 100%;">
+					<%%INSERT_BUTTON%%>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- child records -->
+	<hr>
+	<div class="row">
+		<div class="col-lg-10 col-lg-offset-1">
+			<div id="navavishkar_stay_table-children" class="children-tabs">
+				<div class="text-center"><i class="glyphicon glyphicon-refresh loop-rotate"></i> <%%TRANSLATION(Loading ...)%%></div>
+			</div>
+		</div>
+	</div>
+
+</div><!-- /div class="panel-body" -->
+	<script>
+		$j(function() {
+			var add_new_mode = (!$j('input[name=SelectedID]').val());
+			var embedded_mode = ($j('input[name=Embedded]').val() == 1);
+
+			/* auto-close embedded page? */
+			var autoclose_mode = ($j('input[name=AutoClose]').val() == 1);
+			var record_added_ok = (location.search.split('record-added-ok=').length == 2);
+			var record_updated_ok = (location.search.split('record-updated-ok=').length == 2);
+			if((record_added_ok || record_updated_ok) && embedded_mode && autoclose_mode) {
+				setTimeout(AppGini.closeParentModal, 2000);
+			}
+
+
+			/* enable DV action buttons to float on scrolling down the form */
+			enable_dvab_floating();
+
+			$j('#navavishkar_stay_table_dv_container-loading').addClass('hidden');
+			$j('#navavishkar_stay_table_dv_container').removeClass('hidden');
+			if(!$j('.table_view').length || $j('[name=SelectedID]').val().length) AppGini.focusFormElement('navavishkar_stay_table', 'full_name');
+
+			$j('a[href="<%%BASE_UPLOAD_PATH%%>"]').click(function() { return false; });
+
+			if(embedded_mode) {
+				/* hide links to children tables in embedded mode */
+				$j('.detail_view a[id$=_link]').remove();
+
+				/* append embedded mode to all links */
+				var append_embedded = function() {
+					$j('a[href]:not([href^="#"]):not([href^="javascript"]):not([href$="Embedded=1"]):not([href*="link.php?t="]):not([href^="mailto:"]):not([href$=".jpg"]):not([href$=".png"]):not([href$=".gif"])').each(
+						function() {
+							$j(this).attr('href', $j(this).attr('href') + '&Embedded=1');
+						}
+					);
+				}
+				setInterval(append_embedded, 1000);
+			}
+
+			/* when no record is selected ('add new' mode) */
+			if(add_new_mode) {
+				/* hide links to children tables */
+				$j('.detail_view a[id$=_link]').remove();
+			} else {
+				post(
+					'parent-children.php', {
+						ParentTable: 'navavishkar_stay_table',
+						SelectedID: '<%%VALUE(id)%%>',
+						Operation: 'show-children'
+					},
+					'navavishkar_stay_table-children'
+				);
+			}
+
+			if(true /* !embedded_mode */) {
+				$j('.add_new_parent').click(function() {
+					const fieldId = $j(this).prevAll('input:hidden').eq(0).attr('id');
+					const pt = $j(this).attr('id').replace(/_add_new$/, '');
+
+					modal_window({
+						url: `${pt}_view.php?addNew_x=1&Embedded=1`,
+						close: function() {
+							$j(`#${fieldId}-container`).select2('focus').select2('focus');
+
+							/* if a new parent was added, select it */
+							var new_id = AppGini.localStorage.getItem(`${pt}_last_added_id`);
+							if(new_id === null) return;
+
+							AppGini.localStorage.removeItem(`${pt}_last_added_id`);
+							AppGini.lookupText({
+								id: new_id,
+								table: AppGini.currentTableName(),
+								field: fieldId,
+								callback: function(data) {
+									$j(`#${fieldId}-container`).select2('data', data, true);
+								}
+							});
+						},
+						beforeClose: AppGini.confirmBeforeClosingModal,
+						size: 'full',
+						title: $j(this).attr('title')
+					});
+				});
+			}
+
+			AppGini.hideViewParentLinks();
+
+			$j('form').on('click', '.view_parent', function() {
+				const pt = $j(this).attr('id').replace(/_view_parent$/, '');
+				const fieldId = $j(this).prevAll('input:hidden').eq(0).attr('id');
+
+				let parent_id = '{empty_value}';
+				if(fieldId) {
+					parent_id = $j(`#${fieldId}`).val();
+				} else if($j(this).prevAll('[type=radio]').length) { /* handle radio lookups */
+					parent_id = $j(this).prevAll('[type=radio]').eq(0).val();
+				} else {
+					parent_id = $j(this).prevAll().children('input:hidden').eq(0).val();
+				}
+
+				if(parent_id != '{empty_value}' && parent_id !== undefined && parent_id !== '') {
+					const parent_link = $j(this).parents('.form-group').children('label').data('parent_link');
+					switch(parent_link) {
+						case 'view_parent_hidden':
+							break;
+						case 'view_parent_modal':
+							modal_window({
+								url: `${pt}_view.php?Embedded=1&SelectedID=${encodeURIComponent(parent_id)}`,
+								close: function() {
+									$j(`#${fieldId}-container`).select2('focus').select2('focus');
+
+									// update lookup text in case the parent record was updated
+									AppGini.lookupText({
+										id: parent_id,
+										table: AppGini.currentTableName(),
+										field: fieldId,
+										cache: false,
+										callback: function(data) {
+											$j(`#${fieldId}-container`).select2('data', data, true);
+
+											// update auto-fills
+											const updaterName = `${fieldId}_update_autofills`;
+											if(typeof(window[updaterName]) == 'function')
+												window[updaterName]();
+										}
+									});
+								},
+								beforeClose: AppGini.confirmBeforeClosingModal,
+								size: 'full',
+								title: $j(this).attr('title')
+							});
+							break;
+						case 'view_parent_same_window':
+							window.location = `${pt}_view.php?Embedded=${embedded_mode ? '1' : ''}&SelectedID=${encodeURIComponent(parent_id)}`;
+							break;
+						case 'view_parent_new_window':
+							window.open(`${pt}_view.php?SelectedID=${encodeURIComponent(parent_id)}`);
+							break;
+					}
+
+				}
+			});
+
+			navavishkar_stay_tableUniqueFields.forEach(fieldName => enforce_uniqueness('navavishkar_stay_table', fieldName));
+
+			/* load admin tools for admin user */
+			if(!add_new_mode) {
+				$j('body').append('<div id="admin-tools-appendix"></div>');
+				$j('#admin-tools-appendix').load(
+					'ajax_admin_tools.php?table=navavishkar_stay_table&id=<%%URLVALUE(id)%%>',
+					function(resp) {
+						if(!resp.length) return;
+						$j.ajax('ajax_admin_tools.php?action=get_admin_tools_js&table=navavishkar_stay_table&id=<%%URLVALUE(id)%%>');
+					}
+				);
+			}
+		});
+
+		var navavishkar_stay_tableUniqueFields = [
+		];
+	</script>
