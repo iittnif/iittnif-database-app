@@ -847,6 +847,13 @@
 					'group' => $tg[14],
 					'homepageShowCount' => 1
 				],
+				'Testing_table' => [
+					'Caption' => 'Testing table',
+					'Description' => '',
+					'tableIcon' => 'table.gif',
+					'group' => $tg[0],
+					'homepageShowCount' => 0
+				],
 		];
 
 		if($skip_authentication || getLoggedAdmin()) return $all_tables;
@@ -967,6 +974,7 @@
 			'hrd_Fellowship' => ['Fellowship', '<span style="color:red;font-size: 20px;"><b>Human Resource Development </b></span>', 'table.gif', 'NMICPS Portal - Apps'],
 			'hrd_sd' => ['Skill Development', '<span style="color:red;font-size: 20px;"><b>Human Resource Development </b></span>', 'table.gif', 'NMICPS Portal - Apps'],
 			'it_International_Collaboration' => ['International Collaboration', '<span style="color:red;font-size: 20px;"><b> International Targets </b></span>', 'table.gif', 'NMICPS Portal - Apps'],
+			'Testing_table' => ['Testing table', '', 'table.gif', 'Approvals &amp; Sanctions'],
 		];
 
 		if($skip_authentication || getLoggedAdmin()) {
@@ -14462,6 +14470,22 @@
 						],
 					],
 				],
+				'Testing_table' => [
+					'id' => [
+						'appgini' => "INT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT",
+						'info' => [
+							'caption' => 'ID',
+							'description' => '',
+						],
+					],
+					'name' => [
+						'appgini' => "VARCHAR(255) NULL",
+						'info' => [
+							'caption' => 'Name',
+							'description' => '',
+						],
+					],
+				],
 			];
 
 			$internalTablesSimple = [
@@ -18919,6 +18943,7 @@
 					ON membership_users.memberID = %TABLENAME%.last_updated_by
 					WHERE %TABLENAME%.%PKFIELD% = %ID%;',
 			],
+			'Testing_table' => [],
 		];
 	}
 	#########################################################
@@ -19322,6 +19347,8 @@
 			'hrd_sd' => [
 			],
 			'it_International_Collaboration' => [
+			],
+			'Testing_table' => [
 			],
 		];
 

@@ -1043,6 +1043,8 @@
 		],
 		'it_International_Collaboration' => [
 		],
+		'Testing_table' => [
+		],
 	];
 
 	// XSS prevention

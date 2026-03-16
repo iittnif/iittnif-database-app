@@ -617,6 +617,10 @@
 
 			return $data;
 		},
+		'Testing_table' => function($data, $options = []) {
+
+			return $data;
+		},
 	];
 
 	// accept a record as an assoc array, return a boolean indicating whether to import or skip record
@@ -725,6 +729,7 @@
 		'hrd_Fellowship' => function($data, $options = []) { return true; },
 		'hrd_sd' => function($data, $options = []) { return true; },
 		'it_International_Collaboration' => function($data, $options = []) { return true; },
+		'Testing_table' => function($data, $options = []) { return true; },
 	];
 
 	/*

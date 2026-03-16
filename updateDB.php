@@ -271,6 +271,8 @@
 
 		setupTable('it_International_Collaboration', []);
 
+		setupTable('Testing_table', []);
+
 
 
 		// set up internal tables
